@@ -116,6 +116,7 @@
 			var tmpav = 0;
 			var cmpt1 = 1;
 			var cmpt2 = 1
+			var mp = 0;
 			$('#win').hide();
 			  //****************************//
 			 //********PLAYER 1************//
@@ -152,10 +153,11 @@
 						var pos = $('#1').offset();
 						console.log(pos);
 						$('#compteur').text(pos.left);
-						if (pos.left==1108)
+						if ((pos.left>=1108)&&(mp==0))
 						{
 							popup();
-							$('input').addClass('caché')
+							$('input').addClass('caché');
+							mp++;
 						}
 						tmpav=tmp;
 
@@ -360,10 +362,11 @@
 					right:"-=100"
 					});
 					var pos2 = $('#2').offset();
-					if (pos2.left==1108)
+					if ((pos2.left==1108)&&(mp==0))
 					{
 						popup();
 						$('input').addClass('caché');
+						mp++;
 					}
 					cmpt2++;
 					tmpav2 = d2.valueOf();
